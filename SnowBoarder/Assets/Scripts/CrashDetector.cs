@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CrashDetector : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class CrashDetector : MonoBehaviour
     {
         if (collision.collider == HeadCollider)
         {
-            Debug.Log("You Lose!");
+            SceneManager.LoadScene(0);
         }
     }
 
