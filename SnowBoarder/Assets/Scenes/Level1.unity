@@ -2293,6 +2293,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torqueAmount: 10
+  boostSpeed: 30
+  baseSpeed: 20
 --- !u!1 &1258070515
 GameObject:
   m_ObjectHideFlags: 0
