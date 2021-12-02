@@ -14,6 +14,7 @@ public class CrashDetector : MonoBehaviour
     {
         if (collision.collider == HeadCollider)
         {
+            FindObjectOfType<PlayerController>().DisableControls();
             crashEffect.Play();
             GetComponent<AudioSource>().PlayOneShot(crashSFX);
             Invoke("ReloadScene", reloadWait);
