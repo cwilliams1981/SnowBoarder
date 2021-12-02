@@ -9,14 +9,16 @@ public class CrashDetector : MonoBehaviour
     [SerializeField] float reloadWait = 1f;
     [SerializeField] ParticleSystem crashEffect;
     [SerializeField] AudioClip crashSFX;
+    bool headSafe = true;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider == HeadCollider)
+        if ((collision.collider == HeadCollider) && (headSafe))
         {
             FindObjectOfType<PlayerController>().DisableControls();
             crashEffect.Play();
             GetComponent<AudioSource>().PlayOneShot(crashSFX);
+            headSafe = false;
             Invoke("ReloadScene", reloadWait);
         }
     }
